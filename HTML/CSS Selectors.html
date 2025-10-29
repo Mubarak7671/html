@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Explanation</title>
+    <style>
+        /*
+        ============ UNIVERSAL SELECTOR ============
+    Definition: Universal selector (*) applies style to ALL elements in the page.
+    Use: Reset margins, paddings or apply a common style to every element.
+    Syntax: * { property: value; }
+    Priority: Lowest priority.*/
+    *{ 
+        font-family: Arial;
+    }
+    /*
+    ------------TYPE SELECTOR--------------
+     Definition: Type selector selects element by its tag name (like h1, p, div).
+    Use: Apply style to all tags of that type.
+    Syntax: element { property: value; }*/
+    h1{
+        background-color: brown;
+    }
+    /*
+    ----------=====CLASS SELECTOR-----===========
+    Definition: Class selector uses (.) dot symbol to target elements with same class name.
+    Use: Reuse same style in multiple elements.
+    Syntax: .classname { property: value; }
+    */
+    .highlight{
+        color: red;
+        font-weight: bold;
+
+    }
+    /*
+    -------======ID SELECTOR-----==========
+    Definition: ID selector uses (#) hash symbol to target one unique element.
+    Use: Apply style to only one unique element.
+    Syntax: #idname { property: value; }
+    Priority: Higher than class and type.
+    */
+ #url{
+    background-color: aqua;
+    color: blue;
+    font-style: italic;
+
+ }
+ /*
+ <!-----=====GROUP SELECTOR----========>
+    Definition: Group selector (,) applies same style to multiple selectors together.
+    Use: Reduce repetition.
+    Syntax: h1, h2, p { property: value; }
+    */
+h1,p{
+    color:greenyellow;
+    padding: 20px;
+    font-size: medium;
+}
+/*
+============ DESCENDANT SELECTOR ============
+    Definition: Descendant selector (space) targets element inside another element.
+    Use: Apply style only if element is inside parent.
+    Syntax: parent child { property: value; }
+    */
+    div p{
+        color: blueviolet;
+
+    }
+    /*
+    ============ CHILD SELECTOR ============
+    Definition: Child selector (>) selects only direct child, not deeper nested.
+    Use: When you need to style only immediate children.
+    Syntax: parent > child { property: value; }
+    */
+   div  > span{
+    font-weight: bold;
+    color: chartreuse;
+
+    }
+    /*
+    ============ ADJACENT SIBLING SELECTOR ============
+    Definition: (+) selects element immediately after another element.
+    Use: Style element that comes right after another.
+    Syntax: element1 + element2 { property: value; }
+    */
+    h2+p{
+        font-style: initial;
+        background-color: rgb(36, 33, 33);
+        color: white;
+    }
+    /*
+    ============ GENERAL SIBLING SELECTOR ============
+    Definition: (~) selects all siblings that come after a particular element.
+    Use: Apply style to multiple following siblings.
+    Syntax: element1 ~ element2 { property: value; }
+    */
+    h4~p{
+        color:orange;
+    }
+     /*
+    ============ ATTRIBUTE SELECTOR ============
+    Definition: Attribute selector styles elements based on attribute or its value.
+    Use: Style inputs, links etc. with certain attributes.
+    Syntax: element[attribute=value] { property: value; }
+    */
+     input[type="text"] {
+      border: 2px solid red;
+    }
+
+    a[target="_blank"] {
+      color: blue;
+    }
+    /*
+    ============ PSEUDO-CLASS SELECTOR ============
+    Definition: Pseudo-class (:) defines special state of an element.
+    Use: Hover, focus, visited etc.
+    Syntax: element:pseudo-class { property: value; }
+    */
+    a:hover {
+      color: red;
+      text-decoration: underline;
+    }
+
+    input:focus {
+      border: 2px solid green;
+    }
+    /*
+    ============ PSEUDO-ELEMENT SELECTOR ============
+    Definition: Pseudo-elements (::) style specific part of element.
+    Use: First letter, before, after content etc.
+    */
+    p::first-letter {
+      font-size: 30px;
+      color: red;
+    }
+
+    p::after {
+      content: " ✨";
+      color: gold;
+    }
+/*----Box model----
+    defnition: The CSS Box Model is the way browsers interpret the size and spacing of every element on a webpage.
+Every element is treated like a rectangular box, and it is made up of 4 main parts:
+
+Content – The actual text, image, or data inside the box.
+
+Padding – The space between the content and the border (inside the box).
+
+Border – A line that wraps around the content + padding.
+
+Margin – The space outside the border, separating the element from others.
+
+📌 Structure looks like this:
+ ---------------------
+|       Margin        |
+|  -----------------  |
+|  |     Border    |  |
+|  |  -----------  |  |
+|  |  | Padding |  |  |
+|  |  | Content |  |  |
+|  |  -----------  |  |
+|  -----------------  |
+ ---------------------*/
+
+.box {
+  width: 200px;               
+    padding: 20px;               
+    border: 5px solid black;    
+  margin: 15px;                
+  background-color: lightblue;
+}
+    
+
+    
+
+
+
+     
+
+
+    </style>
+
+</head>
+<body>
+    <!-----UNIVERAL SELECTOR Example-->
+    <h1>Using font family :Arial type in Universal Selector</h1>
+    <!-----TYPE SELECTOR Example-->
+    <h1>This is My Page Using TYPE SELECTOR .... Brown color background</h1>
+    <!-------CLASS SELECTOR Example-->
+    <h2 class="highlight">This is My Page Using CLASS SELECTOR</h2>
+    <!--------ID SELECTOR Example-->
+    <h3 id="url"> This is My Page Using ID selector</h3>
+    <!---------GROUP SELECTOR Example----->
+    <h2>This is My Page Using GROUP Selector</h2>
+    <p>The Taj Mahal, located in Agra, India, is a white marble mausoleum built by Mughal Emperor Shah Jahan in memory of his wife Mumtaz Mahal.
+It is one of the Seven Wonders of the World and a UNESCO World Heritage Site.
+The monument is famous for its stunning architecture, symmetry, and symbol of eternal love.
+</p>
+<!----------DESCENDANT SELECTOR Example-->
+<div>
+    <p>
+        This is DESCENDANT SELECTOR
+    </p>
+</div>
+<!--------CHAILD SELECTOR Example-->
+<div>
+    <span>
+        Font family Using CHAILD Selector
+    </span>
+    <!-----ADJACENT SIBLING SELECTOR Example-->
+</div>
+<h2>About Punganur ,This is example for ADJACENT Sabling Selector</h2>
+<p>Punganur is a town in Chittoor district of Andhra Pradesh, known for its historical and cultural significance.
+It is famous for the **Punganur cow**, a small-sized indigenous cattle breed.
+The town also has temples and serves as a local trade and agricultural hub.
+</p>
+<!----GENERAL SIBLING SELECTOR Example-->
+<h4>This is h4</h4>
+<p>After h4 sibling selector apply one color</p>
+<!------ATTRIBUTE SELECTOR Example-->
+  <input type="text" placeholder="This input has red border">
+  <br><br>
+  <a href="https://google.com" target="_blank">This link opens in new tab (Blue)</a>
+  <!-- Pseudo-class Example -->
+  <p>Hover on this <a href="#">link</a> to see hover effect.</p>
+  <input type="text" placeholder="Click here to see green border on focus">
+   <!-- Pseudo-element Example -->
+  <p>This paragraph shows first-letter big and red, and ✨ after the line.</p>
+  <!----box model example----->
+<div class="box">This is Content</div>
+
+    
+</body>
+</html>

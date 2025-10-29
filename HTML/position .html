@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position Property</title>
+  <style>
+    
+    body{
+      width: 100%;
+      height: 2500px;
+    }
+    *{
+      font-size: x-large;
+    }
+
+    h1{
+      background-color: aqua;
+      color: chartreuse;
+      font-style: italic;
+      font-family: Arial;
+    }
+    .Static{
+      position:static;
+      background-color: lightblue;
+      top: 30px;
+    }
+    .mai{
+      position: relative;
+      top: 60px;
+      left: 30px;
+      background-color: lightgreen;
+    }
+    .Style{
+          position: absolute;
+          background-color: lightseagreen;
+        
+        }
+        .Button{
+          position: fixed;
+          bottom: 50px;
+          left: 45px;
+          background-color: lightcoral;
+          padding: 10px;
+        }
+        .angle{
+          position: sticky;
+          top: 200px;
+          background-color: lightsalmon;
+          padding: 10px;
+          right: 350px;
+        }
+        .box1 {
+      position: absolute;
+      top: 250px;
+      left: 50px;
+      width: 100px;
+      height: 100px;
+      background: lightblue;
+      z-index: 1; /* behind */
+    }
+
+    .box2 {
+      position: absolute;
+      top: 280px;
+      left: 80px;
+      width: 100px;
+      height: 100px;
+      background: orange;
+      z-index: 2; /* in front */
+    }
+  </style>
+</head>
+<body>
+  <h1>Position Property</h1>
+  <!------Used to Control how an element is placed on a web Page-->
+  <div class="Static">Static Position ,Defalt position</div>
+  <!------Elements position normally.No special position.It is Defalt-->
+  <div class="mai">Relative Position</div>
+  <!-------Positioned relative to its normal position . You can move it.Top,Right,bottom,left-->
+  <div class="Style">Absolute Position</div>
+  <!-------Element is placed at an exact spot on the page-->
+  <div class="Button">I am Here ..Fixed position</div>
+  <!------It means the element always stay in the same place on the screen,even scroll,it is always positioned relative to the browser window-->
+  <div class="angle">I am Stay permanent at one place . I can't move Sticky Position</div>
+  <!------The element in place while scrolling , sticks in place -->
+  <div class="box1">Relative</div>
+  <div class="box2">Absolute</div>
+  
+  
+
+  
+
+  
+</body>
+</html>

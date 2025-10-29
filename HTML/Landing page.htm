@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Landing page</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: rgb(208, 201, 171);
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 250px 1fr 250px;
+            grid-template-rows: 70px auto auto 80px;
+            min-height: 100vh;
+            grid-template-areas: 
+            "header header header"
+            "sidebar main extrabar"
+            "footer footer footer";
+        }
+        header{
+            grid-area: header;
+            background-color: lightsalmon;
+            padding: 10px;
+            text-align: center;
+            justify-content: space-between;
+            display :flex;
+            color: solid rgb(186, 56, 56);
+        }
+        header h1{
+             animation-name: moveText;          
+  animation-duration: 4s;            
+  animation-timing-function: ease-in-out; 
+  animation-delay: 1s;               
+  animation-iteration-count: infinite; 
+  animation-direction: linear;        
+        }
+        @keyframes moveText{
+            0%{opacity: 0;}
+            50%{opacity: 1;}
+            100%{opacity: 0;}
+        }
+        header h1{
+            padding-bottom: 30px;
+        }
+        aside{
+            grid-area: sidebar;
+            background-color: lightskyblue;
+            padding: 15px;
+            margin-right: 2px solid red;
+        }
+        aside h3{
+            color: darkorange ; margin-top: 2px;
+        }
+        .leo{
+             background-color: aqua;
+             padding: 10px 15px;
+             border: darkgreen;
+      cursor: pointer;
+      transition:0.4s ease, transform 0.4s ease, opacity 0.4s ease;
+}
+.leo:hover{
+  background-color: cadetblue;
+  transform: scale(1,1.1) translate(15px,-10px);
+}
+        main{
+            background: url(../Media/Imagees/bg.jpg) no-repeat center center;
+            background-size: cover;
+            height: 450vh;
+            grid-area: main;
+            padding: 20px;
+        }
+        main h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      color:black;
+    }
+    .extrabar{
+        grid-area: extrabar;
+        background: rgb(76, 101, 76);
+        padding: 10px;
+        border-left: lightgreen;
+    }
+    .extrabar h3{
+        color: rgb(130, 53, 53);}
+    .services ,.reviews,.equipments{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .card {
+      background: rgb(199, 175, 175);
+      width: 300px;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+.card:hover {
+    transform: scale(1.2);}
+    .card img{
+        width: 100%;
+      height: 150px;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    .review-card {
+      width: 300px;
+      background: whitesmoke;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    .review-card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+    .review-card p{
+        font-size: 13x;
+        color: rgb(142, 85, 85);
+    }
+    footer {
+      grid-area: footer;
+      background: #0077b6;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+     @media(max-width: 992px){
+      .container {
+        grid-template-areas:
+          "header"
+          "main"
+          "sidebar"
+          "extrabar"
+          "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+      aside, .extrabar { border: none; }
+    }
+    @media(max-width: 600px){
+      .services, .reviews, .equipments { flex-direction: column; align-items: center; }
+      nav a { display: block; margin: 5px 0; }
+    }
+    </style>
+</head>
+<body>
+</div>
+    <div class="container">
+        <header>
+        <h1 style="color: darkred;"> 🏥 Appolo Hospital</h1>
+        <a href="#">Home</a>
+        <a href="#">Servises</a>
+        <a href="#">Doctors</a>
+        <a href="#">Contact Us</a>
+        </header>
+        <div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    <aside>
+      <h3>Emergency</h3>
+      <p>📞 24/7 Helpline: +91-9876543210</p>
+      <h3>Opening Hours</h3>
+      <p>Mon - Sat: 8AM - 10PM</p>
+      <p>Sunday: 9AM - 5PM</p>
+      <h2>Appointment booking</h2>
+      <button class="leo">“Click Here”</button>
+      <h2>Doctor profiles</h2>
+      <ul>
+      <li><b>Name</b>:Dr. Arjun Mehta, MD.</li><br>
+      <li><b>Department</b>:Cardiology, Neurology, Pediatrics, Orthopedics, etc</li><br>
+      <li><b>Experince</b>:20+ years of clinical practice.</li><br>
+      <li><b>Motive</b>:"The art of medicine consists of healing the body with care and the soul with compassion."</li><br>
+      </ul>
+     <ul>
+     <li><b>Name</b>:Dr.Jhonny MBBS</li><br>
+     <li><b>Department</b>:General Surgery</li><br>
+     <li><b>Experince</b>:25+ years in practice.</li><br>
+     <li><b>Motive</b>:"A good physician treats the disease, but a great physician treats the patient who has the disease."</li><br>
+     </ul>
+     <h2>Ambulance provide facilities</h2>
+     <img src="../Media/Imagees/ambulance.jpg" alt="image">
+     <h3>Emergency Contact Number:</h3>
+     <p>24/7 Ambulance Helpline ( “Call: 1066” – Apollo’s emergency number).</p>
+     <h3>Availability:</h3>
+     <p>“Round-the-clock ambulance services across the city.”</p>
+     <h3>Types of Ambulances:</h3>
+     <p>Basic Life Support (BLS), Advanced Life Support (ALS), Cardiac Ambulances, ICU-on-Wheels.</p>
+     <h3>Quick Booking Option:</h3>
+     <button>📞 Request an Ambulance</button>
+    </aside>
+    <main>
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="card">
+                <img src="../Media/Imagees/icu.jpg" alt="image">
+                <h3>Emergency Care</h3>
+                <p> 24/7 Emergency Unit
+                    Ambulance Services
+                    ICU Intensive card unit
+                </p>
+            </div>
+            <div class="card">
+                <img src="../Media/Imagees/ct.jpg"  alt="image">
+                <h3>Outpatient & Diagnostic Services</h3>
+                <p>
+                    General Check-ups
+                    Pathology & Lab Tests
+                    X-ray,MRI,CT Scan.
+                </p>
+            </div>
+            <div class="card">
+                <img src="../Media/Imagees/heart.jpg" alt="image">
+                <h3>Cardiology</h3>
+                <p>Advanced heart treatments and checkups</p>
+            </div>
+            <div class="card">
+                <img src="../Media/Imagees/Card.jpg" alt="image">
+                <h3>Orthopedics</h3>
+                <p> Provides treatment for bone, joint, and muscle problems</p>
+            </div>
+            <h2>What our Patients Says</h2>
+            <div class="reviews">
+                <div class="review-card">
+                    <img src="../Media/Imagees/nayara.jpg" alt="image">
+                    <h4>Alexa</h4>
+                    <p>"Appolo Hospital saved my father’s life during a heart emergency. Truly grateful!"</p>
+                </div>
+                <div class="review-card">
+                    <img src="../Media/Imagees/girl.jpg" alt="image">
+                    <h4>Shamma</h4>
+                    <p>"Appolo Hospital gave my child excellent care and attention during the checkup!"</p>
+                </div>
+                <div class="review-card">
+                    <img src="../Media/Imagees/krish.jpg" alt="image">
+                    <h4>Krish</h4>
+                    <p>"Appolo Hospital’s orthopedic care helped me recover quickly from my injury!"</p>
+                </div>
+            </div>
+            <h2>Our Modern Equipments</h2>
+            <div class="equipments">
+            <img src="../Media/Imagees/dialosis.jpg" alt="image">
+            <img src="../Media/Imagees/defebri.jpg" alt="image">
+            <img src="../Media/Imagees/ultra.jpg" alt="image">
+            <img src="../Media/Imagees/ct.jpg" alt="image">
+            <img src="../Media/Imagees/infusion.jpg" alt="iamge">
+            <img src="../Media/Imagees/ecg.jpg" alt="image">
+            <img src="../Media/Imagees/mri.jpg" alt="image">
+            <img src="../Media/Imagees/laboratory.jpg" alt="image">
+            <img src="../Media/Imagees/robo.jpg" alt="image">
+            <img src="../Media/Imagees/anesthesia.jpg" alt="iamge">
+            </div>
+        </div>
+    </main>
+    <div class="extrabar">
+        <h3>Why Choose us ?</h3>
+        <ul>
+            <li>Experienced Doctors & Specialists</li>
+            <li>24/7 Emergency Services</li>
+            <li>Modern facilities & Equipments</li>
+        </ul>
+        <h3>Quicks Facts & Stats</h3>
+        <ul>
+            <li>Number of doctors</li>
+            <li>Patient satisfaction rate</li>
+            <li>Years of Services</li>
+        </ul>
+        <h3>Services Overview</h3>
+        <ul>
+        <li>Cardiology, Pediatrics, Orthopedics, Neurology</li>
+        <li>Surgery & Diagnostics</li>
+        <li>Pharmacy & Laboratory</li>
+        </ul>
+        <h3>Accreditations / Awards</h3>
+        <ul>
+        <li>Any certifications or awards to build trust</li>
+        </ul>
+        <h3>Patient Reviews / Testimonials</h3>
+        <ul>
+        <li>Short 1-line review snippets like:
+        <li>“Appolo Hospital saved my father’s life!”</li>
+        <li>“Excellent care for my child!”</li>
+        </li>
+        </ul><br><br><br>
+        <h2>Our Providing Facilities</h2>
+        <h3>🏥 Key Facilities at Apollo Hospitals</h3>
+        <ul>
+        <li>Modern diagnostic & imaging: CT scans, MRI, PET scans, nuclear medicine labs.</li>
+        <li>Intensive care units (ICU/HDU), neonatal & paediatric ICUs, critical care units.</li>
+        <li>Centres of excellence in cardiology, orthopaedics, gastroenterology, neurology, cancer care</li>
+        <li>Comfortable patient amenities: private & deluxe rooms, WiFi, TV, telephone services in rooms, personalized meals.</li>
+        <li>Emergency & trauma services, ambulatory transport, telemedicine services.</li>
+        </ul>
+    </div>
+    <footer>
+        <p>Apollo Hospitals, Greams Road
+No. 21, Greams Lane, Off Greams Road,
+Thousand Lights, Chennai – 600006, Tamil Nadu, India
+📞 Emergency: 1066 | ☎️ Phone: +91-44-40401066</p>
+<div class="map">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.131764020548!2d80.25596517454674!3d13.067439587260842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267bb0c851e7f%3A0x828f64f3ab34f1a5!2sApollo%20Hospitals%2C%20Greams%20Road!5e0!3m2!1sen!2sin!4v1727950200000!5m2!1sen!2sin" 
+    width="100%" 
+    height="300" 
+    style="border:0; border-radius:10px;" 
+    allowfullscreen=""
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+
+    </footer>
+
+
+    
+
+    
+</body>
+</html>

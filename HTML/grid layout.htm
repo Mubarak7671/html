@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Layout Example</title>
+  <style>
+    body{
+      margin: 0;
+      font-family: Arial,  sans-serif;
+    }
+  .container{
+      display: grid;
+      grid-template-areas: 
+      "header header header"
+      "sidebar main main"
+      "sidebar extra extra"
+      "footer footer footer";
+  grid-template-columns: 180px 2fr;  
+      grid-template-rows: 80px auto 40px 60px;
+      row-gap: 15px ;
+      column-gap: 15px;
+      min-height: 100ph;
+      padding:15px ;
+      background:rgb(156, 134, 134) ;
+    }
+    .box{
+      padding:20px ;
+      border-radius: 8px;
+      background: rgb(203, 192, 145);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      border: 2px teal;
+      background-color: linear-gradiant(to left top, blue, red);
+    }
+    .header{
+      grid-area: header;
+      background: steelblue;
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+    }
+    /*Animation */
+    h1 {
+  animation-name: moveText;          
+  animation-duration: 4s;            
+  animation-timing-function: ease-in-out; 
+  animation-delay: 1s;               
+  animation-iteration-count: infinite; 
+  animation-direction: alternate;    
+  animation-fill-mode: forwards;    
+}
+@keyframes moveText {
+  0% {
+    transform:translate(0);   
+  }
+  50% {
+    transform: translateX(100px); 
+  }
+  100% {
+    transform: translateX(0);   
+  }
+}
+    .header{
+      margin: 0;
+      text-align: center;
+      padding: 10px;
+    }
+    .sidebar{
+      grid-area: sidebar;
+      background: cadetblue;
+      animation-name: move;
+      animation-duration: 12sec;
+      animation-timing-function: linear;
+      animation-delay: 2s;
+      animation-iteration-count: infinite;
+    }
+    .sidebar ul{
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar ul li{
+      margin: 15px 0;
+    }
+    .sidebar ul li a{
+      color: whitesmoke;
+      text-decoration: none;
+    }
+    .you{
+      transition: 1sec linear;
+    }
+    .main{
+      background: teal;
+    }
+    .main h2{
+      margin-top: 0;
+    }
+    .card{
+      border: 2px solid black;
+      border-radius: 10px;
+      width: 300px;
+      padding: 10px;
+      /*backbround=linear-gradient*/
+      background:linear-gradient(to right, red , yellow);
+      flex: 1 1 50px;
+    }
+    .card img{
+       animation-name: move;
+  animation-duration: 3s;              
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;      
+}
+.card:hover{
+  /*Transformation Properties*/
+  transform: scale(1,1.1) translate(20px,-20px);
+}
+.raja{
+  background-color: aqua;
+      color:black;
+      height: 100px;
+      width: 100px;
+      padding: 15px 10px;
+      font-size: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition:0.4s ease, transform 0.4s ease, opacity 0.4s ease;
+}
+.raja:hover{
+  background-color: cadetblue;
+  transform: scale(1,1.1) translate(15px,-10px);
+}
+@keyframes move {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0.5;}
+}
+
+    .extra{
+      grid-area: extra;
+      background: palevioletred;
+    }
+    .footer{
+      grid-area: footer;
+      background: lightgreen;
+      line-height: 15px;
+      text-align: center;
+    }
+    .highlight{
+      grid-column: 1 / span 3 ;
+      background: orange;
+      text-align: center;
+      font-weight: bold;
+    }
+    @media (max-width: 768px) {
+      .container {
+        grid-template-areas:
+          "header"
+          "main"
+          "extra"
+          "sidebar"
+          "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+    }
+  .sidebar h1{
+    animation-name: move;
+  animation-duration: 3s;              
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;      
+}
+@keyframes move{
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
+}
+.sidebar img{animation-name: move;
+  animation-duration: 3s;              
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes move {
+  0% {opacity: 0,1.5;}
+  50%{opacity: 1;}
+  100%{opacity: 0;}
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box header">
+      <h1 class="mubbu" style="color: red;"><B>DAWAT RESTAURANT
+        “Serving love on every plate.”
+      </B></h1>
+      <div style="padding-bottom:50px ; " class="mama">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Online Delivery</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="box sidebar">
+      <h1 style="text-align: center;color: darkred;">Welcome To Dawat Restarant</h1>
+      <img src="../Media/Imagees/fu.jpg" alt="image" width="150px">
+      <ul>
+        <li><a href="#">Online Orders</a></li>
+        <li><a href="#">Offer/Specilas</a></li>
+        <li><a href="#">Opening and Closing Hours</a></li>
+        <li><a href="#">Special Dishes</a></li>
+        <li><a href="#">Chef's recomendation</a></li>
+        <li><a href="#">Popular Biryani & Nalli Items</a></li>
+        <li><a href="#">Customers Reviews</a></li>
+        <li><a href="#">Up Coming Eventa</a></li>
+        <li><a href="#">Contact & reservations</a></li>
+        </ul>
+        <button class="you">Open</button>
+    </div>
+    <div class="box main">
+      <h2 style="color: darkred;">Different Types of Recipies and Their Details,
+         Cost Review And Rating </h2>
+         <div class="card">
+          <h3><b>Chicken Biryani:</b></h3>
+          <img src="../Media/Imagees/biryani.jpg" alt="image">
+          <p>
+            <ul>
+              <li>Cost : 150-200$</li>
+              <li>Rating : 3.8-4.0 </li>
+              <li>Reviews : Good taste,less quantity</li>
+              <li>Type : Hyderabad Dum Biryani</li>
+            </ul>
+          </p>
+          </div>
+            <div class="card">
+              <h3><b>Thandoori Chicken Tikka:</b></h3>
+              <img src="../Media/Imagees/leg.jpg" alt="image">
+              <p>
+                <ul>
+                  <li>Prise : 300-350$</li>
+                  <li>Rating : 4.5</li>
+                  <li>Review : Juicy, good spice; some say a bit dry if overcooked; comes with onions / chutney.</li>
+                  <li>Type : Tandoori Chicken</li>
+                </ul>
+              </p>
+              </div>
+              <div class="card">
+                <h3><b>Fish Fry:</b></h3>
+                <img src="../Media/Imagees/fish.jpg" alt="image">
+                <p>
+                  <ul>
+                    <li>Prise : 200-250$</li>
+                    <li>Rating : 3.5</li>
+                    <li>Review :Crispy coating, good flavour; some say portion is small.</li>
+                    <li>Type : Catla Fish</li>
+                  </ul>
+                </p>
+              </div>
+              <div class="card">
+                <h3><b>Mutton Kofta:</b></h3>
+                <img src="../Media/Imagees/kufta.jpg" alt="image">
+                <p>
+                  <ul>
+                    <li>Prise : 350-400$</li>
+                    <li>Rating : 4.3</li>
+                    <li>Review :Soft, well-spiced meatballs in rich gravy; some say gravy is a bit oily.</li>
+                    <li>Type : Mutton</li>
+                  </ul>
+                </p>
+              </div>
+              <div class="card">
+                <h3><b>Prwns Fry:</b></h3>
+                <img src="../Media/Imagees/prawns.jpg" alt="image">
+                <p>
+                  <ul>
+                    <li>Prise : 450-500$</li>
+                    <li>Rating : 4.8</li>
+                    <li>Review :Juicy prawns with crispy</li>
+                    <li>Type : Indian style</li>
+                  </ul>
+                </p>
+              </div>
+              <div class="card">
+                <h3><b>Soups:</b></h3>
+                <img src="../Media/Imagees/s.jpg" alt="image">
+                <p>
+                  <ul>
+                    <li>Prise : 150$</li>
+                    <li>Rating : 3.0</li>
+                    <li>Review : Customers say soups are well-portioned, good hygiene and taste</li>
+                    <li>Type : Chicken Soup</li>
+
+                    
+                  </ul>
+                </p>
+              </div>
+          </div>
+         </div>
+    </div>
+    <div class="box extra">
+      <ul>
+        <li>Latest Updates</li>
+        <li>Special Items</li>
+        <li> 50% Disscount for Online Orders</li>
+      </ul><br>
+1. <b> **Today’s Special:**</b> Mutton Nalli Biryani at a discounted price.<br>
+2. <b> **Timings:**</b> Open daily from 11 AM – 11 PM.<br>
+3. <b> **Home Delivery:**</b> Free delivery on orders above ₹500.<br>
+4. <b> **Location:**</b> Near City Center, Hyderabad.<br>
+</p>
+<button class="raja">Online Delivery</button>
+    </div>
+     <div class="box highlight">
+       🎉 Special Announcement!
+Dawat Restaurant presents new seasonal dishes at special prices.
+Come and enjoy delicious North Indian flavors with family and friends!
+    </div>
+    <div class="box footer">
+   <p>Dawat Restaurant – Marathahalli
+Address: Near Railway Gate, Marathahalli, Bangalore
+Cuisine: North Indian
+Details: A convenient stop for both locals </p>
+    </div>
+  </div>
+</body>
+</html>

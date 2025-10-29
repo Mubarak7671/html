@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Tasks</title>
+    <style>
+      /*Z-Index*/
+        .box1 {
+      position: absolute;
+      top: 250px;
+      left: 50px;
+      width: 100px;
+      height: 50px;
+      background: lightblue;
+      z-index: 1;
+      margin: 550px; 
+    }
+    .box2 {
+      position: absolute;
+      top: 280px;
+      left: 80px;
+      width: 100px;
+      height: 50px;
+      background: orange;
+      z-index: 2;
+    margin:550px }
+    /*Transition* and Animation*/
+    .box {
+  width: 100px;
+  height: 100px;
+  background-color: skyblue;
+  transition: all 1s ease;
+}
+.box:hover {
+  width: 200px;
+  background-color: coral;
+}
+.king {
+  width: 100px;
+  height: 100px;
+  background-color: skyblue;
+  position: relative;
+  animation: moveBox 2s ease-in-out infinite;
+}
+@keyframes moveBox {
+  0%   { left: 0px; background-color: skyblue; }
+  50%  { left: 200px; background-color: coral; }
+  100% { left: 0px; background-color: skyblue; }
+}
+/*Transformation : Rotate,scale,translate*/
+.card{
+      border: 2px solid black;
+      border-radius: 10px;
+      width: 300px;
+      padding: 10px;
+      background:linear-gradient(to right, red , yellow);
+      flex: 1 1 50px;}
+      .card:hover{
+      transform: scale(1,1.1);
+    }
+ .card1{
+     border: 2px solid black;
+      border-radius: 10px;
+      width: 300px;
+      padding: 10px;
+      background:linear-gradient(to right, red , yellow);
+      flex: 1 1 50px;
+    transform: rotate(25deg);}
+    .card2{
+        border: 2px solid black;
+      border-radius: 10px;
+      width: 300px;
+      padding: 10px;
+      background:linear-gradient(to right, red , yellow);
+      flex: 1 1 50px;}
+      .card2:hover{
+      transform: translate(20px,-20px);
+    }
+    /*key frames*/
+.box10 {
+  width: 100px;
+  height: 100px;
+  background-color: skyblue;
+  position: relative;
+  animation: moveBox 3s infinite;
+}
+@keyframes moveBox {
+  0%   { left: 0px; background-color: skyblue; }
+  50%  { left: 200px; background-color: coral; }
+  100% { left: 0px; background-color: skyblue; }}
+  /*Rottating 3D Cube*/
+        .scene{
+            width: 300px;
+            height: 300px;
+        }
+        .cube{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: spin 6s linear infinite;
+
+        }
+        .cube div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid red;
+            background-color: lightgreen;
+            color: black;
+            font-size: 30px;
+        }
+        .front{transform: rotateY(0deg)translateZ(100px);}
+        .back{transform: rotateY(180deg) translateZ(100px);}
+        .left{transform: rotateY(90deg) translateZ(100px);}
+        .right{transform: rotateY(-90deg) translateZ(100px);}
+        .top{transform: rotateX(90deg) translateZ(100px);}
+        .bottom{transform: rotateX(-90deg)translateZ(100px);}
+
+        @keyframes spin{
+            from{transform: rotateX(0deg) rotateY(odeg);}
+            to{ transform: rotateX(360deg) rotateY(260deg)}
+        }
+        /*landing page*/
+        header{
+            display: flex;
+            justify-content: space-between;
+            background: lawngreen;
+            padding:10px 10px ;
+            color: whitesmoke;
+            position: sticky;
+        }
+         h1{
+            font-size: 20px;
+        }
+        nav a {
+  color: solid red;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url(../Media/Imagees/bg\ hero.jpg) no-repeat center/cover;
+  color: white;
+  text-align: center;
+  animation: fadeIn 2s ease-in;
+}
+.hero h2 {
+  font-size: 50px;
+  animation: slideIn 3s ease-out;
+}
+.hero p{
+    margin: 15px 0 25px;
+  font-size: 18px;
+  animation: fadeIn 3s ease-in;
+}
+.hero button {
+  padding: 12px 28px;
+  background: #0ea5e9;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.hero button:hover {
+  background: aqua;
+  color: #0ea5e9;
+  transform: scale(1.1.1);}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes slideIn {
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 60px 50px;
+  background: lightpink;
+}
+.cardk{
+     background: lightgray;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease,;
+}
+.cardk:hover{
+    transform: translate(-15px);
+}
+.cardk img{
+    width: 70px;
+    margin-bottom: 10px;
+    animation: rotateIcon 3s linear infinite;}
+  @keyframes rotateIcon {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+footer{
+     background: #0ea5e9;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  animation: fadeIn 2s ease;
+}
+@media (max-width: 768px) {
+  .hero h2 { font-size: 36px; }
+  .hero p { font-size: 16px; }
+  header { flex-direction: column; }
+  nav a { display: block; margin: 10px 0; }
+}
+/*product card css*/
+.product-card {
+  width: 280px;
+  background: aqua;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.4s ease, ;
+  cursor: pointer;
+  position: relative;
+}
+.product-card:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+.product-card img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.product-card:hover img {
+  transform: scale(1.1);
+}
+.product-info {
+  padding: 20px;
+  text-align: center;
+}
+.product-info h3 {
+  margin-bottom: 10px;
+  color: #0ea5e9;
+}
+.product-info p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 10px 25px;
+  background: #0ea5e9;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.btn:hover {
+  background: #0284c7;
+  transform: scale(1.05);
+}   </style>
+</head>
+<body>
+  <!--Relative,absoulute,fixed,sticky,static positions Difference--->
+    <h1>Difference b/w relative,absoulute,fixed,sticky and static positions</h1>
+    <table border="1" width="100%">
+        <tbody>
+            <tr>
+                <th>Name of the Position</th>
+                <th>Definition</th>
+                <th>Importance</th>
+            </tr>
+            <tr>
+                <td>1.Relative</td>
+                <td>Positioned relative to its normal position</td>
+                <td>Element move in "top,right,bottom,left</td>
+            </tr>
+            <tr>
+                <td>2.Absolute</td>
+                <td>Element is placed exact position on the page </td>
+                <td>Elements placed in exact spot "right,left,bottom etc...</td>
+            </tr>
+            <tr>
+                <td>3.Fixed</td>
+                <td>Elements always stay in the same place on screen , even scroll</td>
+                <td>One Element fixed in one position "using for buttons "</td>
+            </tr>
+            <tr>
+                <td>4.Sticky</td>
+                <td>The Elements in place while scrolling,sticks in place onece it reach a set position</td>
+                <td>Using for Header porsions in menues,and flipkart etc..</td>
+            </tr>
+            <tr>
+                <td>5.Static</td>
+                <td>Elements position normally , No special positoion</td>
+                <td>Defalt in nature</td>
+            </tr>
+        </tbody>
+    </table>
+    <!---INline ,line,block,inline-block Differences-->
+    <h2>Differences b/w Positions</h2>
+    <p>static : Default position; element stays in normal flow and can’t be moved.
+ relative : Moves element slightly from its original spot without affecting others.
+ absolute : Removed from normal flow; positioned relative to nearest positioned ancestor.
+ fixed : Stays fixed on the screen even when scrolling (relative to viewport).
+sticky : Acts relative until a scroll point, then sticks like fixed.</p>
+<h2>Defference b/w inline,inline-block,block and flex display properties</h2>
+<p>Inline
+    <ul>
+        <li>Elements appear in same line ,with out line breaks</li>
+        <li>Ex: span,a,stonge,margin etc... type tags</li>
+        <li>We can't set weidth and hight in inline</li>
+    </ul>
+</p>
+<p>inline-block
+    <ul>
+        <li>Behaves like inline (stays in line) but allows width and height adjustments.</li>
+        <li> useful for placing multiple boxes side by side with control over size.</li>
+    </ul>
+</p>
+<p>Block
+    <ul>
+        <li>Always starts on a new line and stretches to fill available width.
+            For ex:We fill in content in "p tag" after closing "/p tag" forther content enter into next line 
+        </li>
+        <li>We can set width, height, margin, and padding freely for block elements.
+ Common examples: div, p, h1,h6.li
+    </ul>
+</p>
+<p>Flex
+    <ul>
+        <li>Turns a container into a flexible layout; items align in row or column.
+            control how a flex items grow,shrink,and sets its initial size inside a flex container
+        </li>
+        <li>helps create responsive, aligned, and spaced designs easily.</li>
+    </ul>
+    </p>
+    <!----Z-index -->
+    <h2>Explanation of Z-Index and Stacking context</h2>
+    <p>
+        z-index controls which element appears on top when elements overlap.
+Higher z-index → element comes forward (on top).
+Lower z-index → element goes behind.
+    </p>
+     <div class="box1">Behind</div>
+  <div class="box2">Front</div>
+  <!---Transition and Animation-->
+  <h2>Difference b/w transition and animation</h2>
+  <p>
+    The transition property makes CSS changes smooth and animated.
+    <ul>
+        <li>When you move your mouse over the box (hover),
+it slowly changes its color and size in 1 second.
+Without transition, it would change instantly.</li>
+    </ul>
+  </p>
+<div class="box"></div>
+<p>The animation property makes elements move or change automatically —
+you don’t need to hover or click.
+It uses keyframes to define how the element should change step by step.</p>
+<div class="king"></div>
+<!---Transformation-->
+<h2>Transformation:Scale , rotate,translate</h2>
+<div>
+    <div class="card">
+                <h3><b>Prwns Fry: Scale property</b></h3>
+                <img src="../Media/Imagees/prawns.jpg" alt="image">
+                <p>
+                  <ul>
+                    <li>Prise : 450-500$</li>
+                    <li>Rating : 4.8</li>
+                    <li>Review :Juicy prawns with crispy</li>
+                    <li>Type : Indian style</li>
+                  </ul>
+                </p>
+              </div>
+</div>
+<div>
+    <div class="card1">
+        <h3>Roatate Property</h3>
+        <img src="../Media/Imagees/Credit.jpg" alt="image">
+        <p>A credit card is a plastic or digital card given by a bank or financial company that lets you borrow money to buy things now and pay later.</p>
+    </div>
+</div>
+<div>
+    <div class="card2">
+        <h3>translate Property</h3>
+        <img src="../Media/Imagees/download (1).jpg">
+    </div>
+</div>
+<!---Keyforms-->
+<h2>@keyframes</h2>
+<p>Keyframes define how an animation changes — step by step.
+They tell the browser what the element should look like at certain times during the animation.</p>
+<div class="box10"></div>
+<h2>Rotating 3D Cube</h2>
+  <div class="scene">
+        <div class="cube">
+            <div class="front">front</div>
+            <div class="back">back</div>
+            <div class="left">left</div>
+            <div class="right">right</div>
+            <div class="bottom">bottom</div>
+            <div class="top">top</div>
+        </div>
+    </div>
+    <!-----Landing Page-->
+    <h2>Landing Page</h2>
+    <header>
+            <h1>My Brand</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Services</a>
+                <a href="#">About us</a>
+                <a href="#">Contact</a>
+            </nav>
+    </header>
+    <section class="hero">
+        <h2>Transform Your Ideas into Reality</h2>
+        <p>We help businesses and startups grow faster with innovative digital solutions — 
+    from web design and app development to branding and marketing strategies. 
+    Let’s build something great together.</p>
+    <button>Explore our services</button>
+    </section>
+</div>
+    <section class="cards">
+        <div class="cardk">
+            <img src="../Media/Imagees/web.png" alt="image">
+            <p>
+                <ul>
+                    <li><b>Name:</b>Web Design</li>
+                    <li><b>Description:</b>Crafting responsive and visually stunning websites to bring your ideas online.</li>
+                </ul>
+            </p>
+        </div>
+        <div class="cardk">
+            <img src="../Media/Imagees/APP.png" alt="image">
+            <p>
+                <ul>
+                    <li><b>Name :</b> App Development </li>
+                    <li><b> Description :</b> Building custom mobile apps that transform concepts into powerful tools.</li>
+                </ul>
+            </p>
+        </div>
+        <div class="cardk">
+            <img src="../Media/Imagees/digital.png" alt="image">
+            <p>
+                <ul>
+                    <li><b>Title :</b> Digital Marketing</li>
+                    <li><b>Description</b> : Promoting your brand online to reach the right audience effectively.</li>
+                </ul>
+            </p>
+        </div>
+        <div class="cardk">
+            <img src="../Media/Imagees/sco.png" alt="image">
+            <p>
+                <ul>
+                    <li><b>Title:</b> SEO & Analytics</li>
+                    <li><b>Description:</b> Optimizing your content and analyzing performance to drive growth.</li>
+                </ul>
+            </p>
+        </div>
+    </section>
+<footer>
+  <p>© 2025 MyBrand. All Rights Reserved.</p>
+</footer>
+<!----Product Card-->
+<h2>Product Card</h2>
+<div class="product-card">
+    <img src="../Media/Imagees/watch.jpg" alt="image">
+    <div class="product view">
+        <h3>Royal Watch</h3>
+        <p>"Royal Watch – Timeless elegance crafted for the modern wrist."</p>
+        <div class="prise">Prise : 2000-5000$</div>
+        <button class="btn">Order Now</button>
+    </div>
+</div>
+</body>
+</html>

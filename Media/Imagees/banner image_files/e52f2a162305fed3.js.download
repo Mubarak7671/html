@@ -1,0 +1,8 @@
+(globalThis["webpackChunk_canva_web"] = globalThis["webpackChunk_canva_web"] || []).push([[58514],{
+
+/***/ 152260:
+function(_, __, __webpack_require__) {__webpack_require__.n_x = __webpack_require__.n;const __web_req__ = __webpack_require__;__web_req__(905716);__web_req__(896719);__web_req__(64501);globalThis._456c437108d2d2713799e19380be528d = globalThis._456c437108d2d2713799e19380be528d || {};(function(__c) {var kRf=__webpack_require__(322594),lRf=kRf.jsx,mRf=kRf.jsxs;__c.nRf=(0,__webpack_require__(205482).memo)(({title:a,No:b,zn:c})=>mRf(__c.Fc,{od:"start",spacing:"2u",children:[lRf(__c.Dc,{width:"content",children:lRf(__c.yD,{className:"Y9SdaA",src:b,alt:a,borderRadius:"element",border:"none"})}),lRf(__c.Dc,{children:mRf(__c.Mc,{spacing:{default:"0",tb:"0.5u"},children:[a&&lRf(__c.Mi,{size:"small",tagName:"h3",children:a}),c&&lRf(__c.QM,{Pna:c})]})})]}));
+}).call(globalThis, globalThis._456c437108d2d2713799e19380be528d);}
+
+}])
+//# sourceMappingURL=sourcemaps/e52f2a162305fed3.js.map

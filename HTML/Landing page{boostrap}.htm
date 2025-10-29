@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <style>
+.carousel-item img {
+  width: 700px;   
+  height: 500px;
+  object-fit: cover; 
+}
+.carousel h5{
+  color: aqua ;
+}
+.carousel p{
+  color: darkorange;
+}
+.king{
+  color: blue;
+  text-align: center;
+  background: chartreuse;
+}
+.card{
+  background: turquoise;
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+.card img {
+  display: block;
+  transition: transform 0.5s ease;
+}
+.card1{
+  background: gray;
+}
+.h4{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.btn{
+  background: lightgreen;
+}
+  </style>
+</head>
+<body>
+  <!-----Nav Bar :- Header-->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="../Media/Imagees/t.jfif" alt="image" height="70px">
+       "Beat Breakers"
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!---Hero Section-->
+<section class="bg-dark text-center text-white text-md-start position-relative">
+  <div class="position-absolute top-0 start-0 w-100 h-100" 
+       style="background: url('https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat; opacity: 0.5;">
+  </div>
+  <div class="container position-relative py-5 py-md-0 d-flex flex-column justify-content-center align-items-center" style="min-height: 100vh;">
+<div class="text-center">
+  <h1 class="display-3 fw-bold">“✨"Shine On Stage: Talent 2025 Show Your Spark!”</h1>
+  <p class="lead mt-3 mb-5">“Discover the next generation of artists, singers, and innovators.”</p>
+  <p class="lead mt-4 mb-5">Show Your Talent Win Prizes!</p>
+  </div>
+  <div class="mb-2">
+    <span class="badge bg-primary text-white fs-5 me-3">📅 16 October 2025</span>
+    <span class="badge bg-danger text-white fs-6 me-2">📍 City Auditorium</span>
+    <!-- Button to modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Rigistration here
+</button>
+
+<!-- Modal Structure -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">🎉 Talent 2025 – Event Registration</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>Event Categories:-</h4>
+        <ul>
+          <li>💃 Dancing Competition</li>
+          <li>🎤 Singing Challenge</li>
+          <li>🎬 Short Film Contest</li>
+          <li>🎨 Art Exhibition</li>
+          <li>💡 Tech Innovation</li>
+          <li>🍳 Cooking Masterclass</li>
+          <li>📸 Photography Show</li>
+          <li>🎭 Stand-up Comedy</li>
+        </ul>
+        <p>Limited spots available — register now and make your talent shine on stage!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Rigistration</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+  </div>
+  <div class="mt-5">
+    <div class="d-flex justify-content-center gap-3">
+      <div>
+        <h2 class="fw-bold">15</h2>
+        <small>Days</small>
+      </div>
+      <div>
+        <h2 class="fw-bold">10</h2>
+        <small>Hours</small>
+      </div>
+      <div>
+        <h2 class="fw-bold">50</h2>
+        <small>Minutes</small>
+      </div>
+    </div>
+  </div>
+</section>
+<!----Carousel Property-->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" 
+data-bs-interval="2000">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../Media/Imagees/dance.jpg" class="d-block w-100 " alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>"Beat Breakers"</h5>
+        <p>“Feel the rhythm, move with passion — express your story through dance.”</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../Media/Imagees/sing.jfif" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>🎧 Sing It Loud!</h5>
+        <p>Your voice deserves the spotlight.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../Media/Imagees/fashion.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>👗 Runway Stars</h5>
+        <p>Strut your style and let the world see your elegance.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  </div>
+  <!----Form-->
+  <section id="register" class="container my-5">
+  <h2 class="king">”💫 “Fill the Form — Your Journey to Stardom Begins!”</h2>
+  <div class="register-section mx-auto col-lg-8 col-md-10 p-4 bg-light rounded-3 shadow-sm">
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label class="form-label">Full Name</label>
+        <input class="form-control " placeholder="Enter Name" type="text">
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Mobile Number</label>
+        <input class="form-control" placeholder="Enter Number" type="text">
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">E-mail</label>
+        <input class="form-control" placeholder="Enter E-mail" type="text">
+      </div>
+      <div class="col-md-3">
+        <label class="form-label">Age</label>
+        <input class="form-control" placeholder="Ener age" type="number">
+      </div>
+      <div clss="col-md-6">
+        <label class="form-label">Select Categories</label>
+        <select class="form-select">
+           <option selected disabled>Choose your category</option>
+            <option>💃Dancing</option>
+            <option>🎤Singing</option>
+            <option>Fashion Show</option>
+            <option>🎭Drama</option>
+            <option>🎨Art Exhibition</option>
+            <option>🎤Stand-Up Comedy</option>
+            <option>📸Photography</option>
+            <option>📝Poetry</option>
+            <option>🎸Instrumental</option>
+            <option>👨‍🍳 Cooking</option>
+            <option>🎬 Short Film</option>
+            <option>💡 Tech Innovation</option>
+        </select>
+        </div>
+      <div class="col-md-12">
+          <label class="form-label">Short Discription</label>
+          <input class="form-control" placeholder="Enter Description" type="text">
+        </div>
+    </div>
+    <!------Toast Property-->
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div id="liveToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive"
+        aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body">
+            🎉 Registration Successful! See you at Talent 2025!
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+            aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-success" id="liveToastBtn">Click Here For Registration</button>
+
+  </div>
+
+  <!-- Activate Tooltip & Toast Script -->
+  <script>
+    // Tooltip activation
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el));
+
+    // Toast activation
+    const toastTrigger = document.getElementById('liveToastBtn');
+    const toastLiveExample = document.getElementById('liveToast');
+    if (toastTrigger) {
+      toastTrigger.addEventListener('click', () => {
+        const toast = new bootstrap.Toast(toastLiveExample);
+        toast.show();
+      });
+    }
+  </script>
+      </div>
+</div>
+<!---Cards Section -1-->
+<h2 class="fw-bold mb-4 text-center ">🎭 Explore Talent Categories</h2>
+<section class="d-flex flex-wrap gap-5 ">      
+<div class="card" style="width: 18rem;">
+  <h5 class="title fw-bold text-center">💃 Dancing</h5>
+  <img src="../Media/Imagees/dance.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">"Join us for a dazzling dance showcase where talent meets rhythm! Watch performers light up the stage with classical, hip-hop, and freestyle moves."</p>
+  </div>
+  <div class="text-center">
+      <button class="btn btn-outline-success" id="rigisternow">Register Now</button>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <h5 class="title fw-bold text-center">🎤 Singing</h5>
+  <img src="../Media/Imagees/sing.jfif" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text ">"Step into the spotlight and let your voice shine! Join our singing event to showcase your melody, range, and emotion on stage."</p>
+  </div>
+  <div class="text-center">
+      <button class="btn btn-outline-success">Register Now</button>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <h5 class="title fw-bold text-center">Fashion</h5>
+  <img src="../Media/Imagees/fashion.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">"Join the runway where fashion, beauty, and attitude come alive — celebrate individuality and flair."</p>
+  </div>
+  <div class="text-center">
+      <button class="btn btn-outline-success">Register Now</button>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <h5 class="title fw-bold text-center">📸 Photography</h5>
+  <img src="../Media/Imagees/photo.jfif" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">"Unleash your creativity and showcase your best captures in our Photography Contest — where every shot speaks emotion and imagination."</p>
+  </div>
+  <div class="text-center">
+      <button class="btn btn-outline-success">Register Now</button>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <h5 class="title fw-bold text-center">🎭 Drama</h5>
+  <img src="../Media/Imagees/drama.jfif" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">From paintings to digital art, this exhibition celebrates the vision and passion of talented artists.</p>
+  </div>
+  <div class="text-center">
+      <button class="btn btn-outline-success">Register Now</button>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <h5 class="title fw-bold text-center">🎨 Art Exhibition</h5>
+  <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">"From paintings to digital art, this exhibition celebrates the vision and passion of talented artists."</p>
+  </div>
+  <div class="text-center">
+      <button class="btn btn-outline-success">Register Now</button>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <h5 class="title fw-bold text-center">🎤 Stand-Up Comedy</h5>
+  <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">"Get ready to tickle funny bones! Join our Stand-Up Comedy event and showcase your wit, timing, and sense of humor."</p>
+  </div>
+  <div class="text-center">
+      <button class="btn btn-outline-success">Register Now</button>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <h5 class="title fw-bold text-center">📝 Poetry</h5>
+  <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">"Step on stage and express your feelings through powerful lines, heartfelt rhythms, and soulful expressions."</p>
+  </div>
+  <div class="text-center">
+      <button class="btn btn-outline-success">Register Now</button>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <h5 class="title fw-bold text-center">🎸 Instrumental</h5>
+  <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">"Experience the power of pure music! Showcase your talent through instruments — from guitar to tabla, violin to drums."</p>
+  </div>
+  <div class="text-center">
+      <button class="btn btn-outline-success">Register Now</button>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <h5 class="title fw-bold text-center">👨‍🍳 Cooking</h5>
+  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"  class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">"Bring your favorite dish to life and impress the judges with your passion and plating perfection."</p>
+  </div>
+  <div class="text-center">
+      <button class="btn btn-outline-success">Register Now</button>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <h5 class="title fw-bold text-center">🎬 Short Film</h5>
+  <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">"Celebrate the art of filmmaking — where imagination meets emotion and every second counts."</p>
+  </div>
+  <div class="text-center">
+      <button class="btn btn-outline-success">Register Now</button>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <h5 class="title fw-bold text-center">💡 Tech Innovation</h5>
+  <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">"From robotics to AI, from coding to design — explore innovations that push the boundaries of possibility."</p>
+  </div>
+  <div class="text-center">
+      <button class="btn btn-outline-success">Register Now</button>
+    </div>
+</div>
+</section>  
+<!------Cards Section-2-->
+<section class="container my-5">
+  <h1 class="text-center text-danger">🌟 Special Guests & Judges</h1><br>
+  <p class="text-center">"Meet our panel of celebrity guests and judges who will evaluate and inspire the performers of Talent 2025."</p>
+  <ul>
+    <li>Arjit Singh</li>
+    <li>Anirudh Ravichandar</li>
+    <li>Thamanna Bhaita</li>
+    <li>Sharukh Khan</li>
+    <li>Allu Arjun</li>
+    <li>Sandip Reddy Vanga</li>
+    <li>Prabhas</li>
+    <li>SS Rajamoli</li>
+  </ul>
+  <main class="d-flex flex-wrap gap-5">
+  <div class="card1" style="width: 18rem;">
+  <img src="../Media/Imagees/aa.jfif" class="card-img-top" alt="..."><br>
+  <h4 class="text-center"> Icon Star Allu Arjun</h4>
+  <div class="card-body">
+    <p class="card-text"> "A stylish Indian actor known for his energetic performances and dance moves in Telugu cinema, winner of multiple Filmfare and Nandi Awards."</p>
+  </div>
+</div>
+<div class="card1" style="width: 18rem;">
+  <img src="../Media/Imagees/Anirudh.jfif" class="card-img-top" alt="..."><br>
+  <h4 class="text-center"> Anirudh Ravichandar</h4>
+  <div class="card-body">
+    <p class="card-text">"A popular Indian music composer and singer, known for his chart-topping Tamil songs, winner of several Filmfare and SIIMA Awards."</p>
+  </div>
+</div>
+<div class="card1" style="width: 18rem;">
+  <img src="../Media/Imagees/arjit.avif" class="card-img-top" alt="..."><br>
+  <h4 class="text-center">Arjit Singh</h4>
+  <div class="card-body">
+    <p class="card-text">"A versatile Indian playback singer celebrated for his soulful voice, recipient of multiple Filmfare and IIFA Awards."</p>
+  </div>
+</div>
+<div class="card1" style="width: 18rem;">
+  <img src="../Media/Imagees/prabhas.jfif" class="card-img-top" alt="..."><br>
+  <h4 class="text-center">Prabhas</h4>
+  <div class="card-body">
+    <p class="card-text">"A popular Indian actor known for his roles in blockbuster Telugu films, including the Baahubali series, and recipient of several Filmfare and Nandi Awards."</p>
+  </div>
+</div>
+<div class="card1" style="width: 18rem;">
+  <img src="../Media/Imagees/sandip.jfif" class="card-img-top" alt="..."><br>
+  <h4 class="text-center"> Sandip Reddy Vanga</h4>
+  <div class="card-body">
+    <p class="card-text">"A renowned Indian film director and screenwriter, famous for directing Arjun Reddy and Kabir Singh, acclaimed with several Filmfare and SIIMA Awards."</p>
+  </div>
+</div>
+<div class="card1" style="width: 18rem;">
+  <img src="../Media/Imagees/sharukh.jfif" class="card-img-top" alt="..."><br>
+  <h4 class="text-center">Sharukh Khan</h4>
+  <div class="card-body">
+    <p class="card-text">"A legendary Bollywood actor known as the “King of Romance,” winner of numerous Filmfare Awards and international honors for his cinematic contributions."</p>
+  </div>
+</div>
+<div class="card1" style="width: 18rem;">
+  <img src="../Media/Imagees/thamaanna.jfif" class="card-img-top" alt="..."><br>
+  <h4 class="text-center"> Thamanna Bhaita</h4>
+  <div class="card-body">
+    <p class="card-text">"A popular Indian actress known for her work in Telugu and Tamil films, recognized with several Filmfare and SIIMA Awards."</p>
+  </div>
+</div>
+<div class="card1" style="width: 18rem;">
+  <img src="../Media/Imagees/thaman.jfif" class="card-img-top" alt="..."><br>
+  <h4 class="text-center">Thaman S</h4>
+  <div class="card-body">
+    <p class="card-text">"A talented Indian music composer and playback singer, known for his work in Telugu and Tamil cinema, recipient of multiple Filmfare and SIIMA Awards."</p>
+  </div>
+</div>
+<div class="card1" style="width: 18rem;">
+  <img src="../Media/Imagees/ss.jfif" class="card-img-top" alt="..."><br>
+  <h4 class="text-center"> SS Rajamoli</h4>
+  <div class="card-body">
+    <p class="card-text">"A visionary Indian film director and screenwriter, acclaimed for blockbuster films like Baahubali and RRR, winner of multiple National and Filmfare Awards."</p>
+  </div>
+</div>
+</main>
+<main>
+  <!---Accordion Class-->
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Event Schedule
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <ul>
+          <li>Program Start At 9:00 am End At 10:00 pm</li>
+          <li>Rigistration & welcome : 8:30 am</li>
+          <li>💃Dance program : 16-10-2025 </li>
+          <li>🎤Singing Compition : 17-10-2025</li>
+          <li>Fashion Show : 18-10-2025</li>
+          <li>📸Photography : 20-10-205</li>
+          <li>🎭 Drama : 21-10-2025</li>
+          <li>🎨 Art Exhibition : 22-10-2025</li>
+          <li>🎤 Stand-Up Comedy : 23-10-2025</li>
+          <li>📝 Poetry : 25-10-2025</li>
+          <li>🎸 Instrumental:26-10-2025</li>
+          <li>👨‍🍳 Cooking : 27-10-2025</li>
+          <li>🎬 Short Film : 28-10-2025</li>
+          <li>💡 Tech Innovation : 29-10-2025</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Rules & Regulations
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <ul>
+          <li>All participants must register in advance to be eligible.</li>
+          <li>Each participant can register for only one category.</li>
+          <li>Props, music, or instruments must be pre-approved by organizers.</li>
+          <li>Participants must maintain decorum and respect judges, organizers, and fellow contestants.</li>
+          <li>Content should be family-friendly; offensive or inappropriate material is prohibited</li>
+          <li>Judges’ decisions are final and cannot be contested.</li>
+          <li>Winners will receive prizes and certificates as announced.</li>
+          <li>Participants are responsible for their personal belongings and safety.</li>
+          <li>Organizers reserve the right to modify schedules or rules in case of unforeseen circumstances.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Contact Information
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <ul>
+          <h5>Event Coordinator :- </h5>
+          <li>Name: Shaik Mubarak</li>
+          <li>Email: shai1990@gmail.com</li>
+          <li>Phone: +91 9876543210</li>
+        </ul>
+          <h5>Social Media :-</h5>
+          <ul>
+            <li>Instagram: @Talent2025Official</li>
+            <li>Facebook: facebook.com/Talent2025</li>
+            <li>Twitter: @Talent2025</li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+<!------Breadcrumb Property-->
+<main>
+  <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#"></a>Home</li>
+    <li class="breadcrumb-item active" aria-current="page">Explore Talent Categories</li>
+  </ol>
+</nav>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Explore Talent Categories</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Data</li>
+  </ol>
+</nav>
+</main>
+<!----Footer Section-->
+<footer class="bg-dark text-light pt-5 pb-3 mt-5">
+  <div class="container text-md-start text-center">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold text-uppercase mb-4">🎵 Beat Breakers</h5>
+        <img src="../Media/Imagees/t.jfif" alt="image">
+        <p>“Shine On Stage: Talent 2025” — Discover, perform, and showcase your unique talent!  
+          Join us and celebrate creativity, music, dance, and innovation.
+        </p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <ul><h4>Contact Information:-</h4>
+<li>📍 Venue: National Cultural Center, Bangalore</li>
+<li>📅 Date: October 16-30 , 2025</li>
+<li>📞 Phone: +91 98765 43210</li>
+<li>📧 Email:beastbreakers@123.gmail.com</li>
+      </div>
+       <div class="col-md-4 mb-4">
+        <h5 class="fw-bold text-uppercase mb-3">Follow us in Social Media</h5>
+        <p><i class="bi bi-geo-alt-fill text-warning"></i> Instagram</p>
+        <p><i class="bi bi-envelope-fill text-warning"></i>  Facebook</p>
+        <p><i class="bi bi-telephone-fill text-warning"></i> Twitter</p>
+        <div class="map">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.131764020548!2d80.25596517454674!3d13.067439587260842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267bb0c851e7f%3A0x828f64f3ab34f1a5!2sApollo%20Hospitals%2C%20Greams%20Road!5e0!3m2!1sen!2sin!4v1727950200000!5m2!1sen!2sin" 
+    width="100%" 
+    height="300" 
+    style="border:0; border-radius:10px;" 
+    allowfullscreen=""
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+      </div>
+      <hr class="border-secondary">
+    <div class="text-center">
+      <p class="mb-0">&copy; 2025 Beat Breakers | Designed for Talent Show Event</p>
+    </div>
+    </div>
+  </div>
+</footer>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
