@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Handling</title>
+    <style>
+      div{
+         height: 1000px;
+      }
+    </style>
+    <!---1.Mouse Events 
+        A.Click
+        B.dblclick
+        C.mousedown
+        D.MouseUp
+        E.Mouseenter
+        F.MouseLeave
+        G.MouseMove
+        2.keyboard events
+        A.keyup
+        B.keydown 
+        C.key press
+        3.window/global object Events
+         A.load
+         B.scrool
+         C.resize
+         D.online
+         E.ofline-->
+
+</head>
+<body>
+    <h1>Event Handling</h1>
+    <button>Click</button><br>
+    <button>Double Click</button>
+    <button>mousedown</button>
+    <button>mouseup</button>
+    <span id="s1">Mouseenter</span>
+    <p>MouseMove</p>
+    <script>
+      //mouseevents
+         const btnEle =document.getElementsByTagName("button");
+         btnEle[0].addEventListener("click",function(){
+            alert("User is clicked button")
+         });
+          btnEle[1].addEventListener("dblclick",function(){
+            alert("User is double clicked button")
+         });
+         btnEle[2].addEventListener("mousedown",function(){
+            console.log("mousedown");
+         });
+         btnEle[3].addEventListener("mouseup",function(){
+            console.log("mouseup");
+         });
+         const spanEle=document.querySelector("#s1");
+         spanEle.addEventListener("mouseenter",function(){
+            spanEle.style.border="1px solid gray";
+            spanEle.style.padding="50px";
+            spanEle.style.margin="15px";
+         })
+         spanEle.addEventListener("mouseleave",function(){
+            spanEle.style.border="";
+            spanEle.style.padding="50px";
+            spanEle.style.margin="15px";
+         })
+         const pEle=document.querySelectorAll("p");
+         console.log(pEle);
+         pEle[0].addEventListener("mousemove",()=>{
+            console.log("mousemove");
+         })
+         
+    </script> 
+    <script>
+      //keyboard events 
+      //keyup events
+      document.addEventListener("keyup",()=>{
+        alert("keyup event");
+      })
+      //keydown event
+      document.addEventListener("keydown",()=>{
+        alert("keydown event");
+      })
+      //keypress event 
+       document.addEventListener("keypress",(event)=>{
+         console.log("event",event);
+         console.log("keypress event");
+      });
+    </script>
+    <div></div>
+    <script>
+      //3.window events
+      //A.load
+      window.addEventListener("load",()=>{
+         console.log("Page is loaded properly");
+      })
+      window.addEventListener("scroll",()=>{
+         console.log("Page is scrolling");
+      })
+      window.addEventListener("resize",(e)=>{
+         console.log("e",e);
+         console.log("Page is resizing");
+      })
+      window.addEventListener("online",()=>{
+         console.log("Your are back to online ");
+      })
+      window.addEventListener("offline",()=>{
+         console.log("Your are ofline");
+      })
+      
+
+
+    </script>
+    
+</body>
+</html>

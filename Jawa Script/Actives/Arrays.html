@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array methods</title>
+    <!--
+    A.array literals
+    B.array constructor-->
+    <!--
+    1.length
+    2.toString
+    3.push()orpush(one or more values)
+    4.pop()
+    5.unshift()
+    6.shift()
+    7.sort()
+    8.reverse()
+    9.concat()
+    10.slice
+    11.splice
+    12.indexof
+    13.lastIndexof-->
+</head>
+<body>
+    <h1>Array Methods</h1>
+    <script>
+        //Array literals 
+        let arr=["arrays",1000,true,undefined,[null,"nested array"],{eid:1,ename:"Mubarak"}];
+        console.log(arr);
+        console.log(typeof arr);
+        arr[6]="abcd";
+        arr[9]="xyz";
+     console.log(arr);
+     for(let i=0;i<arr.length;i++)
+         console.log(arr[i]);;
+        //Array constructor
+        const arr1=new Array("Mubarak","Sadiq","Nisar","Muddasir","Pavan","Vishnu","MohammadAli","Sunny");
+         console.log(arr1);
+         console.log(typeof arr1);
+         //1.length 
+         const arr2=["Mango","Banana","Orange","Coconut"];
+         console.log(arr2);
+         //2.toString 
+         let cities=["Bangalore","Mumbai","Delhi","Hyderabad",[null,"nested array"]];
+         let result=cities.toString();
+         console.log(result);
+         console.log(typeof result);
+    </script>
+    <script>
+        //3.push()
+        const names=["Balaji","Adharsh","Reddy","Divya"];
+        console.log(names);
+        names.push("Meri,Asiya");
+        console.log(names);
+        //4.pop()
+        const trains=["Vandebharat","Rajadhani express","Kerala memo ","Passenger memo"];
+        console.log(trains);
+        trains.pop();
+        console.log(trains);
+    </script>
+    <script>
+        //5.unshift()
+        //6.shift
+        const flowers=["rose","jasmin","lowtus","lilli"];
+        console.log(flowers);
+        flowers.unshift("crysanthium","chitty rose");
+        console.log(flowers);
+        flowers.shift();
+        console.log(flowers);
+    </script>
+    <script>
+        //7.sort()
+        //8.reverse()
+        const name=["Raja","Hari","Mahesh","Preyanshee","Radha","Pranathi","Kavya"];
+        console.log(name);
+        name.reverse();
+        console.log(name);
+        name.sort();
+        console.log(name);
+        const arr6=[1,5,2,6,3,10,13,20,33];
+        console.log(arr6.sort());
+    </script>
+    <script>
+        //9.concat()
+        let hero=["Allu Arjun","Prabhas"];
+        let heroin=["Tamanna","Dimri"];
+        let film=hero.concat(heroin);
+        console.log(film);
+        //10.slice()
+        var vegitables=["Tomato","Carrot","Brinjal","Ladies finger"];
+        var as1=vegitables.slice(2);
+        console.log(as1);
+    </script>
+    <script>
+        //11.splice()
+        const name1=["Raja","Hari","Mahesh","Preyanshee","Radha","Pranathi","Kavya"];
+        console.log(name1);
+        name1.splice(2,0,"Mubarak","Saiq","Nisar");
+        console.log(name1);
+        name1.splice(4,1);
+            console.log(name1);
+        name1.splice(2,4);
+        console.log(name1);
+        name1.push("Radha");
+        name1.unshift("Radha");
+                console.log(name1);
+        console.log(name1.indexOf("Radha"));
+        console.log(name1.lastIndexOf("Radha"));
+        console.log(name1.indexOf("Radha",2));
+
+        //12.indexOf()
+     const color=["Red","Pink","Black","Yellow","Green"];
+     let position=color.indexOf("Black");
+     console.log(position);
+     //13.lastIndexof()
+     let fruits = ["Apple", "Banana", "Mango", "Banana", "Orange"];
+let position1 = fruits.lastIndexOf("Banana");
+console.log(position1);
+
+  
+    </script>
+
+    
+</body>
+</html>
