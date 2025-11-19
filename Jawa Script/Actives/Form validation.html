@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        input{
+            display: block;
+            margin-bottom: 60px;
+        }
+        p{
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+   
+    <h1 style="text-align: center;">Instagram login</h1>
+    <form action="">
+        <input id="email" name="email"type="email" placeholder="Enter Your email">
+        <p id="email_err">Pleace enter valid email </p>
+        <input id="pw" name="pw" type="password" placeholder="Enter Your password">
+        <p id="pw_err">Pleace enter valid password</p>
+        <button id="login">Login</button>
+    </form>
+    <script>
+        document.getElementById("login").addEventListener("click",function(event){
+            event.preventDefault();
+          const email=document.getElementById("email").value;
+          console.log("email",email);
+             const password=document.getElementById("pw").value;
+        console.log("password",password);
+        if(email==""){
+              document.getElementById("email_err").style.display="block";
+        }
+        else{
+             document.getElementById("email_err").style.display="none";
+        }
+        if(password==""){
+            document.getElementById("pw_err").style.display="block";    
+        }
+        else{
+                  document.getElementById("pw_err").style.display="none";    
+      
+        }
+        })
+       
+    </script>
+
+    
+
+    
+</body>
+</html>
