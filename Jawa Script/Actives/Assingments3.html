@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assingment 3</title>
+    
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 350px;
+            margin: 40px auto;
+            background: whitesmoke;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        h2 {
+            background: cyan;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        form label {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        form input, form select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+        .err {
+            color: red;
+            font-size: 14px;
+            display: none;
+            margin-top: 5px;
+        }
+        button {
+            padding: 8px 15px;
+            margin-top: 10px;
+        }
+        #message {
+            color: greenyellow;
+            margin-top: 15px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Application form</h2>
+        <form id="myform">
+            <label>User Name</label>
+            <input id="username" type="text" placeholder="Enter User Name">
+            <p id="userErr" class="err" > Please enter valid user name</p>
+            <label>email</label>
+            <input id="email" type="email" placeholder="Enter Your email">
+            <p id="emailErr" class="err">Please enter valid email </p>
+            <label>Password:-</label>
+            <input id="pw" type="password" placeholder="Enter Your password">
+            <p id="pawErr" class="err">Please enter correct password</p>
+             <label>Gender:</label>
+        <select id="gender">
+            <option value="">---Select gender---</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <p id="genErr" class="err">Please select gender</p>
+            <label>Pan Card Number:-</label>
+            <input id="pannumber" type="pannumber" placeholder="Enter Your Pan number">
+            <p id="panErr" class="err">Please enter valid Pan Number</p>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+           <p id="message"></p>
+    </div>  
+    <script>
+        const form=document.getElementById("myform");
+        const username=document.getElementById("username");
+        const email=document.getElementById("email");
+        const pw=document.getElementById("pw");
+        const gender=document.getElementById("gender")
+        const pannumber=document.getElementById("pannumber");
+        const message=document.getElementById("message");
+
+        const userRegex = /^[A-za-z]{3,20}$/;
+        const emailRegex=/^ [A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9.-]+\.[A-Za-z]{2,40}$/;
+        const pwRegix=/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,}$/;
+        const panRegix=/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+
+        username.addEventListener("focus", ()=>{
+            message.textContent="Typing user name...";
+        });
+        username.addEventListener("blur",()=>{
+            message.textContent="User name input completed!";
+        });
+        gender.addEventListener("change",()=>{
+            message.textContent=`You selected Gender: ${ gender.value}`;
+        });
+        form.addEventListener("submit",(event)=>{
+             event.preventDefault();
+             let valid=true; 
+        if (username.value.trim() === "") {
+            userErr.style.display = "block";
+            valid = false;
+        } else {
+            userErr.style.display = "none";
+        }
+        if (email.value.trim() === "") {
+            emailErr.style.display = "block";
+            valid = false;
+        } else {
+            emailErr.style.display = "none";
+        }
+        if (gender.value === "") {
+            genErr.style.display = "block";
+            valid = false;
+        } else {
+            genErr.style.display = "none";
+        }
+        if (pw.value.trim() === "") {
+            passErr.style.display = "block";
+            valid = false;
+        } else {
+            passErr.style.display = "none";
+        }
+        if (pannumber.value.trim() === "") {
+            pannErr.style.display = "block";
+            valid = false;
+        } else {
+            pannErr.style.display = "none";
+        }
+
+        if (valid) {
+            message.textContent =
+                `Application submitted successfully! 
+                Username: ${username.value}, Email: ${email.value}, Gender: ${gender.value}`;
+        }
+        });
+        form.addEventListener("reset", () => {
+        message.textContent = "Form has been reset!";
+        document.querySelectorAll(".err").forEach(err => err.style.display = "none");
+    });
+
+    </script>
+
+</body>
+</html>

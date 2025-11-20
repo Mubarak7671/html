@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assingments</title>
+    <!--
+    1. What is callback function ?-->
+</head>
+<body>
+    <script>
+        //Callback function :-
+function greet(name, callback) {
+  console.log("Hello, " + name);
+  callback(); // calling the callback function
+}
+function sayBye() {
+  console.log("Goodmorning!");
+}
+greet("Mubarak", sayBye);
+    </script>
+    <script>
+    // 9.Nested Functions :- Declaring function with in the function 
+    function outer(){
+        let x=1;
+        function inner(){
+            let y=10;
+            console.log("y:",y);
+            console.log("Inner Function");
+        }
+        inner();
+        console.log("outer function");
+    }
+    outer();
+</script>
+<script>
+    //Lexical scope
+    function outerFunction(){
+        let wishes="Very Good morning to all !";
+        function innerFunction(){
+            console.log(wishes);
+        }
+        innerFunction();
+    }
+    outerFunction();
+</script>
+<script>
+    //closure
+    function names(){
+          const message="Be in Alert";
+          function name(){
+            console.log(message);//inner still access the message
+          }
+          return name;//return the inner function
+        
+    }
+    let greet10=names();// outer function runs once
+    greet10();//calling inner function
+</script>
+</body>
+</html>
