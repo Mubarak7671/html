@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+    <!---
+    syntax :-
+    funtion funtionname(){
+    logics
+    } funtionname();
+     Types of funtions
+      1.Funtion without parameter
+            * Types Of Scopes :-
+                1.Global Scope 
+                2.Local/function  Scope 
+                3.Block Scope -->
+</head>
+<body>
+    <h2>Scopes</h2>
+    <script>
+        
+        let name = "Shaik";  // global variable
+function greet() {
+    console.log("Hello " + name);
+    console.log(name);
+}
+greet();         
+//console.log(name); 
+    </script>
+    <script>
+        function add() {
+    let x = 5;
+    console.log("Add:", x + 5);
+}
+function multiply() {
+    let x = 10;
+    console.log("Multiply:", x * 2);
+}
+add();        // Output: Add: 10
+multiply();   // Output: Multiply: 20
+console.log("Multiply:", x * 2);
+    </script>
+    <script>
+        if (true) {
+    const msg = "Hello!";
+    console.log(msg); // ✅ 
+}
+console.log(msg); // ❌ 
+    </script>
+    <script>
+        let x="Global Scope";
+        let count=1;
+        if(i==1){
+            let y="block scope";
+            console.log("y:",y);
+        }
+        function fnscope(){
+            let z="function scope";
+            console.log("z:",z);
+        }
+        fnscope();
+    </script>
+    <h1>Funtions</h1>
+    <h2 id="h2">Welcome Students</h2>
+    <script>
+        //1.Funtions Without parameter ( gst() no input )
+        function gst(){
+            const price=1000;
+            const gst=10;
+            const tax=(price*gst)/100;
+            console.log ("Tax:",tax);
+            console.log("Total Price:",(price+tax));
+        }
+        gst();
+    </script>
+    <script>
+        function Acchiversit(){
+            console.log("Welcome to Our Acchiversit");
+            console.log("Lets start your carrier here.");
+        }
+        Acchiversit();
+        //2.Funtions with parameter
+        function gst2(price,gst){
+            const tax=(price*gst)/100;
+            const totalPrice=price+tax;
+            console.log ("tax,totalPrice",tax,totalPrice);
+        }
+        gst2(2000,10);
+        gst2(3000,10);
+        function greet(name) {
+  console.log("Hello, " + name + "! Welcome to JavaScript.");
+}
+greet("Shaik");
+greet("Ali");
+function wish(name,time){
+  console.log("Good  "+ time + "," + name + "!");
+}
+wish("Mubarak","Morning");
+wish("Sadiq" ,"afternoon");
+wish("Nisar" ,  "evening");
+//3.Funtion with return statement 
+function gst3(price,gst){
+            const tax=(price*gst)/100;
+            const totalPrice=price+tax;
+            //console.log ("tax,totalPrice",tax,totalPrice);
+            return totalPrice , tax
+        }
+         const result =gst3(2000,10);
+         console.log("result",result);
+         function add(a, b) {
+  return a + b;     // returns the sum
+}
+let total = add(5, 10);
+console.log("The total is:", total);
+//4. Function with default perameters 
+function greet(name="guest"){
+    console.log("Hello,"+ name + "!");
+}
+greet("Riya");
+greet();
+function num(a,b = a*2){
+    return a*b;
+} 
+console.log (num(6));
+console.log(num(4,4)); 
+//5.    Named Functions 
+function add(a, b) {
+  let sum = a + b;
+  console.log("Sum is:", sum);
+}
+add(5, 10);
+//6.Anonymous function 
+const gst6=function(){
+    console.log("Function without name");
+}
+gst6(); 
+//7.IIFE 
+(function (){
+   console.log("IIEF function");
+    const name=prompt("Enter Your Name:");
+    if(name){
+        document.getElementById("h2").textContent="Welcome"+name;
+    }
+    else {
+       document.getElementById("h2").textContent="Welcome"+guest;
+    }
+})(); 
+// IIFE With parameters 
+(function(name){
+    console.log(name);}
+)("Shaik Mubarak");
+    </script>
+<script>
+    // 9.Nested Functions :- Declaring function with in the function 
+    function outer(){
+        let x=1;
+        function inner(){
+            let y=10;
+            console.log("y:",y);
+            console.log("Inner Function");
+        }
+        inner();
+        console.log("outer function");
+    }
+    outer();
+</script>
+<script>
+    function outer() {
+    console.log("This is the outer function");
+    function inner() {
+        console.log("This is the inner function");
+    }
+    inner(); // calling inner function inside outer
+}
+
+outer();
+
+</script>
+<script>
+    debugger
+    function outerFunction() {
+    console.log("This is the outer function");
+    function innerFunction() {
+        console.log("This is the inner (nested) function");
+    }
+    innerFunction(); // calling inner function
+}
+outerFunction();
+</script>
+    <!--
+     GEC (Global Excecution Context)
+     1.It is default enviroment where js start
+     2. It is create automatic by js engine when program start
+     3.It will create into 2 parts 
+            * Memory phase 
+                Global objects :- Keys and Values 
+            * Excecution Phase 
+               Callstack (Maintain excecution of the code) -->
+            <script>
+
+            </script>
+    
+</body>
+</html>
