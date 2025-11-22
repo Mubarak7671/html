@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expressions</title>
+    <!--Regular Expressions
+    -->
+    
+</head>
+<body>
+    <h1>Regular Expressions</h1>
+     <script>
+        //match()
+       // const regex= /Hello/;
+        //const str="Hello students , Hi all , hello js , Hello Mubarak Hello ,";
+        //console.log(str.match(regex));
+        //test()
+        //console.log(regex.test(str));
+     </script>
+     <script>
+        // .
+        const regex=/^organi.ation$/;
+        const str="organization";          
+        console.log(str.match(regex));
+        console.log(regex.test(str));
+     </script>
+     <script>
+        // \w (A-Za-z0-9)
+        const regex1=/^Initili[\w]ation$/;
+        const str1="Initili8ation";
+        console.log(regex.test(str));
+        // \W (Spl charecters %$3@!**()%)
+        const regex2=/^Mubarak\Wshaik$/;
+        const str2="Mubarak@shaik";
+        console.log(regex.test(str));
+        // \d (only 0-9 , one digit)
+        const number=/^Mango\d$/;
+        const str3="Mango8";
+        console.log(regex.test(str));
+        // \D (Other than digits)
+        const number1=/^Mango\D$/;
+        const str4="Mango#";
+        console.log(number1.test(str4));
+        // \s (Matches spaces _ _)
+        const space=/^Shaik\sMubarak$/;
+        const str5="Shaik Mubarak";
+        console.log(space.test(str5));
+        // \S (Match other than sapces)
+          const space2=/^Shaik\SMubarak$/;
+        const str6="Shaik*Mubarak";
+        console.log(space2.test(str6));
+        // \b 
+        const str7="forward backward ward wardrobe";
+        const regex3=/\bward\b/g;
+        console.log(str7.match(regex3));
+        console.log(regex3.test(str7));
+        // \B
+          const str8="forward backward ward wardrobe";
+        const regex4=/\Bward/g;
+        console.log(str8.match(regex4));
+        console.log(regex4.test(str8));
+
+     </script>
+    
+</body>
+</html>
