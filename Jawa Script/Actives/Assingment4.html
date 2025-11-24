@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments</title>
+</head>
+<style>
+ body{font-family: arial; padding: 20px;}
+ h2{margin-top: 40px;}
+ pre {background: white;padding:10px;}
+ .card{
+    background:#f0f0f0;
+    margin:5px 0;
+    padding:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+ }
+ .delete-btn{
+    background:red;
+    color:white;
+    border:none;
+    padding:5px 10px;
+    cursor:pointer;
+ }
+</style>
+
+<body>
+    <h1>Product Analyzer Using forEach, map, filter, reduce</h1>
+    <div id="output"></div>
+
+    <script>
+        const products = [
+            {id:1,name:"Laptop",category:"Electronic",price:60000},
+            {id:2,name:"Watch",category:"Fashion",price:15000},
+            {id:3,name:"Mobile",category:"Electronic",price:45000},
+            {id:4,name:"Shoes",category:"Fashion",price:5000},
+            {id:5,name:"Bag",category:"Accessories",price:1000},
+            {id:6,name:"Tabs",category:"Electronic",price:50000},
+        ];
+
+        const out = document.getElementById("output");
+
+        function print(title,data){
+            out.innerHTML += `<h2>${title}</h2><pre>${JSON.stringify(data,null,2)}</pre>`;
+        }
+
+        // 1. forEach - Display all products
+        let allProducts=[];
+        products.forEach(p=>{
+            allProducts.push(`${p.name} - ${p.price}`);
+        });
+        print("1. All Products", allProducts);
+
+        // 2. map - New list with discount
+        const discounted = products.map(p=>({
+            ...p,
+            discountedPrice: p.price - p.price * 0.10
+        }));
+        print("2. Products with 10% Discount (map)", discounted);
+
+        // 3. filter - price > 2000
+        const expensive = products.filter(p => p.price > 2000);
+        print("3. Expensive Products (filter)", expensive);
+
+        // 4. filter - category wise
+        const electronics = products.filter(p => p.category === "Electronic");
+        print("4. Electronics Category (filter)", electronics);
+
+        // 5. reduce - Total Price
+        const totalPrice = products.reduce((sum,p)=> sum + p.price, 0);
+        print("5. Total Price of all Products (reduce)", totalPrice);
+
+        // 6. reduce - Average price
+        const avgPrice = (totalPrice / products.length).toFixed(2);
+        print("6. Average Price", avgPrice);
+
+        // 7. reduce - Most expensive product
+        const maxProduct = products.reduce((max,p)=> 
+            p.price > max.price ? p : max
+        );
+        print("7. Most Expensive Product (reduce)", maxProduct);
+
+        // 8. reduce - Least expensive product
+        const minProduct = products.reduce((min,p)=> 
+            p.price < min.price ? p : min
+        );
+        print("8. Least Expensive Product (reduce)", minProduct);
+    </script>
+
+    <h1>Employee Details Management</h1>
+    <input id="empName" placeholder="Enter Employee name" />
+    <button id="addBtn">Add Employee</button>
+
+    <h3>Employee List:</h3>
+    <div id="list"></div>
+
+    <script>
+        // 1. Constructor function
+        function Employee(name){
+            this.name = name;
+        } 
+
+        const list = document.getElementById("list");
+        const addBtn = document.getElementById("addBtn");
+        const empName = document.getElementById("empName");
+
+        // Add Employee
+        addBtn.addEventListener("click", function(){
+            const name = empName.value.trim();
+            if(!name) return;
+
+            const emp = new Employee(name);
+            console.log(emp);
+
+            const cardObj = {
+                emp,
+                show(){
+                    alert("Clicked: " + this.emp.name);
+                }
+            };
+
+            // DOM creation
+            const div = document.createElement("div");
+            div.className = "card";
+            div.textContent = emp.name;
+
+            // click on card
+            div.addEventListener("click", cardObj.show.bind(cardObj));
+
+            // Create delete button
+            const delBtn = document.createElement("button");
+            delBtn.textContent = "Delete";
+            delBtn.className = "delete-btn";
+
+            delBtn.addEventListener("click", function(e){
+                e.stopPropagation();
+                console.log("Delete clicked on:", this.parentNode.textContent);
+                this.parentNode.remove();
+            });
+
+            div.appendChild(delBtn);
+            list.appendChild(div);
+            empName.value = "";
+        });
+
+        // Arrow function example
+        const arrowExample = {
+            name:"Arrow Test",
+            show: ()=>{
+                console.log("Arrow this:", this);
+            }
+        };
+    </script>
+</body>
+</html>
