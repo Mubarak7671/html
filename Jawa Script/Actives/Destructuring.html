@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+    <style>
+        h1{
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>Destructuring,
+        Loops 
+        forEach()
+        map()
+        filter()
+        reduce()
+
+    </h1>
+    <script>
+        const arr=["Mubarak","Nisar","Sadiq"];
+        //console.log(arr[0]);
+        const a=arr[0];
+        const b=arr[1];
+     console.log(a,b);
+     //Destructuring 
+     const [l,,]=arr;
+     console.log(l);
+     //object destructuring 
+     const obj={
+        id:1,
+        name:"Sangeetha",
+     }
+     let id=100;
+     let name="Mubarak";
+     const c=obj.id;
+     const d=obj.name;
+     console.log(c,d);
+     const {id:i,name:n}=obj;
+     console.log(i,n);
+    </script>
+    <script>
+        const arr1=[1,2,3,4,5,6];
+       const result1= arr1.forEach(function(n){
+            console.log(n);
+            console.log(n*n);
+           return n*n;
+        });
+       const result2= arr1.map(function(n){
+            console.log(n);
+            return n*n;
+        });
+        console.log(result1);
+        console.log(result2);
+        const arr2=[1,2,3,4,5,6,7,8,9,10];
+        const even=arr2.filter((eve)=>{
+            return eve%2==0;
+            
+        });
+        console.log(even);
+        const arr3=[100,500,300,250,25];
+        const result3=arr3.reduce((acc,n)=>{
+            return acc+n;
+        },2500+2000+1000)
+        console.log(result3);
+    </script>
+</body>
+</html>
