@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 5</title>
+ <style>
+    body{
+      margin: 0;
+      font-family: Arial;
+      background: white;
+      padding: 20px;
+    }
+    h1{
+      text-align: center;
+      margin-bottom: 20px;
+      color: red;
+    }
+    .container{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card{
+      background: black;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .card:hover{
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    .card img{
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+    }
+    .title{
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0;
+      height: 50px;
+      overflow: hidden;
+    }
+    .price{
+      color: green;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .description{
+        color:white;
+      font-size: 14px;
+      margin: 10px 0;
+      height: 60px;
+      overflow: hidden;
+    }
+    .btn{
+      display: block;
+      margin-top: 10px;
+      background: black;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+    .btn:hover{
+      background: red;
+    }
+  </style>
+</head>
+<body>
+    
+    <h1>🛍️ Zudio Store Products</h1>
+
+    <div class="container" id="productContainer">
+
+        <!-- Sample Cards Before API Loads -->
+        <div class="card">
+            <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg">
+            <div class="title">Sample product</div>
+            <div class="price">$ 5000 - 10000</div>
+            <div class="description">
+                Simple Description
+            </div>
+            <a class="btn">Buy Now</a>
+        </div>
+
+        <div class="card">
+            <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg">
+            <div class="title">Sample product 2</div>
+            <div class="price">$ 10000 - 25000</div>
+            <div class="description">
+               Simple Descrition .
+            </div>
+            <a class="btn">Buy Now</a>
+        </div>
+
+    </div>
+
+    <script>
+        fetch("https://fakestoreapi.com/products")
+            .then(response => response.json())
+            .then(products => {
+                const container = document.getElementById("productContainer");
+                container.innerHTML = ""; // Remove sample cards
+
+                products.forEach(product => {
+                    const card = document.createElement("div");
+                    card.className = "card";
+
+                    card.innerHTML = `
+                        <img src="${product.image}">
+                        <div class="title">${product.title}</div>
+                        <div class="price">$${product.price}</div>
+                        <div class="description">${product.description}</div>
+                        <a class="btn">Buy Now</a>
+                    `;
+                    container.appendChild(card);
+                });
+            })
+            .catch(err => {
+                console.log("Error fetching products:", err);
+            });
+    </script>
+
+</body>
+</html>
