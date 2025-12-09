@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Two Games With AI</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f0f0f0;
+        }
+        .game-box {
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            width: 330px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #aaa;
+        }
+        button {
+            padding: 10px 18px;
+            margin: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* AI Animation for RPS */
+        .ai-hand {
+            font-size: 40px;
+            height: 50px;
+            margin-top: 15px;
+            animation: shake 0.4s infinite alternate;
+        }
+        @keyframes shake {
+            0% { transform: rotate(-20deg); }
+            100% { transform: rotate(20deg); }
+        }
+
+        /* TicTacToe */
+        #board {
+            display: grid;
+            grid-template-columns: repeat(3, 90px);
+            grid-gap: 5px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        .cell {
+            width: 90px;
+            height: 90px;
+            background: #ddd;
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        /* 🎨 TicTacToe Board Styling */
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 90px);
+    grid-gap: 6px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.cell {
+    width: 90px;
+    height: 90px;
+    background: #ffffff;
+    border: 3px solid #4a4a4a;
+    font-size: 42px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    /* Soft shadow */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+
+    /* Smooth hover */
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* Hover effect (only on empty cells) */
+.cell:hover:empty {
+    background: #e5f3ff;
+    transform: scale(1.05);
+}
+
+/* Colors for X and O */
+.cell:contains("X") {
+    color: #ff3b3b; /* Red for X */
+}
+.cell:contains("O") {
+    color: #0077ff; /* Blue for O */
+}
+
+/* Message Text Styling */
+#tttMsg {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+
+<h1>🎮 Two Games in One Page</h1>
+
+<!-- ---------------- ROCK PAPER SCISSORS GAME ---------------- -->
+<div class="game-box">
+    <h2>✌️ Rock-Paper-Scissors</h2>
+
+    <button onclick="playRPS('rock')">🪨 Rock</button>
+    <button onclick="playRPS('paper')">📄 Paper</button>
+    <button onclick="playRPS('scissors')">✂️ Scissors</button>
+
+    <div class="ai-hand" id="aiHand">🤖</div>
+    <h3 id="rpsResult">Choose your move!</h3>
+
+    <button onclick="resetRPS()">🔄 New Game</button>
+</div>
+
+<!-- ---------------- TIC TAC TOE GAME ---------------- -->
+<div class="game-box">
+    <h2>❌ Tic-Tac-Toe vs AI 🤖</h2>
+    <div id="board"></div>
+    <h3 id="tttMsg">Your turn (X)</h3>
+    <button onclick="newTicTacToe()">🔄 New Game</button>
+</div>
+
+<script>
+/* ------------------- RPS GAME ------------------- */
+function playRPS(player) {
+    const choices = ["rock", "paper", "scissors"];//Here 1st select the choises in array formet
+    const ai = choices[Math.floor(Math.random() * 3)]; //math.floor -remove decimal points , math.random() * 3-here give decimal numbers like0.1,1.23
+    const emoji = { rock:"🪨", paper:"📄", scissors:"✂️" };
+
+    document.getElementById("aiHand").innerHTML = emoji[ai];//Use the dom method ai robot display on web page
+
+    let result = "";//we don't know what is result so give here " "
+    if (player === ai) result = "😐 Draw!";// 1 st if player aand ai choose same that it will be show if condition is true 
+    else if ( // 1st if condition is false ,
+        (player === "rock" && ai === "scissors") || // Here check all the conditions ,true("You win") if condition is false("Ai wins") 
+        (player === "paper" && ai === "rock") ||
+        (player === "scissors" && ai === "paper")
+    ) { result = "🎉 You Win!"; }
+    else { result = "💀 AI Wins!"; }
+
+    document.getElementById("rpsResult").innerHTML =
+        "You: " + emoji[player] + " | AI: " + emoji[ai] + "<br>" + result; // <br> - line break result show on new line + result ()
+        // Text showing the player choise "You "+ What is choose with emoji emoji[player]+" | AI: " + what is choose by ai with emoji emoji [ai]
+}
+function resetRPS() {
+    document.getElementById("rpsResult").innerHTML = "Choose your move!";
+    document.getElementById("aiHand").innerHTML = "🤖";
+}
+/* ------------------- TIC TAC TOE (AI Player) ------------------- */
+let board = ["", "", "", "", "", "", "", "", ""];//Board is array contain 9 positions " " 
+//No spot has O
+//Every box is empty
+//So we store "", "", "", ... for all 9 boxes.
+let human = "X"; //Human play with "O"
+let ai = "O";//Ai play with "X"
+let gameOver = false;//false → game is still running
+//true → game finished (win or draw)
+function drawBoard() {
+    let html = ""; //crate empty string it create 9cells
+    for (let i = 0; i < 9; i++) { //loop is stored 9 cells loop from0-8 i=0 is equal to array of index
+        html += `<div class='cell' onclick='humanMove(${i})'>${board[i]}</div>`;
+        //Important line Add cells to html ✔ html +=//Append (add) the generated HTML to the string.
+        //Each box of the tic-tac-toe board is a <div> with class "cell"CSS uses .cell to style the box.
+        //✔ onclick='humanMove(${i})'This means: When the player clicks this box,Call the function humanMove(i), Where i is the cell number (0 to 8)
+        //${board[i]} - Insert the value from board array 
+    }
+    document.getElementById("board").innerHTML = html;//select div element from html
+}
+drawBoard();//call the fuction
+
+function humanMove(i) {//This human function i=0-8
+    if (board[i] !== "" || gameOver) return;
+    //Moves are allowed ,,
+    //Already placed x,o retrun some value , if game over moves are stopped
+    board[i] = human;//Place the human moves here i=0-8 mean when human click 1 "X"
+    drawBoard();//New x is update here
+
+    if (checkWin(human)) {
+        document.getElementById("tttMsg").innerHTML = "🎉 You Win!";
+        gameOver = true;
+        return;//call checkWin("X")If the user formed 3 in a row:✔ Show “You Win!”✔ Set gameOver = true✔ Stop the function using return;
+    }
+    if (!board.includes("")) {//checks if any empty cell exists
+        document.getElementById("tttMsg").innerHTML = "😐 Draw!";
+        gameOver = true;
+        return;
+    }
+
+    document.getElementById("tttMsg").innerHTML = "AI thinking...";//Show msg while ai is choosing
+    setTimeout(aiMove, 1000);//Ai takes 1 sec to choose 
+}
+
+function aiMove() {
+    if (gameOver) return;//Ai think after gameover it was not play
+    // AI chooses a random empty cell
+    let empty = [];//Create empty array for cells
+    for (let i = 0; i < 9; i++) { 
+        if (board[i] === "") empty.push(i);
+    }//| i | board[i] | empty array result |
+//| - | -------- | ------------------ |
+//| 0 | ""       | [0]                |
+//| 1 | "X"      | [0]                |
+//| 2 | ""       | [0,2]              |
+
+    let choice = empty[Math.floor(Math.random() * empty.length)];
+
+    board[choice] = ai;
+    drawBoard();
+
+    if (checkWin(ai)) {
+        document.getElementById("tttMsg").innerHTML = "🤖 AI Wins!";
+        gameOver = true;
+        return;
+    }
+
+    if (!board.includes("")) {
+        document.getElementById("tttMsg").innerHTML = "😐 Draw!";
+        gameOver = true;
+        return;
+    }
+
+    document.getElementById("tttMsg").innerHTML = "Your turn (X)";
+}
+
+function checkWin(p) {
+    const wins = [
+        [0,1,2],[3,4,5],[6,7,8],
+        [0,3,6],[1,4,7],[2,5,8],
+        [0,4,8],[2,4,6]
+    ];
+    return wins.some(w => w.every(i => board[i] === p));
+}
+
+function newTicTacToe() {
+    board = ["","","","","","","","",""];
+    gameOver = false;
+    drawBoard();
+    document.getElementById("tttMsg").innerHTML = "Your turn (X)";
+}
+</script>
+
+</body>
+</html>
